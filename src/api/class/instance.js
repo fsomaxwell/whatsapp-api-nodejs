@@ -306,6 +306,7 @@ class WhatsAppInstance {
         })
 
         sock?.ev.on('messages.update', async (messages) => {
+            this.SendWebhook('messages.update', messages, this.key)
             //console.log('messages.update')
             //console.dir(messages);
         })
